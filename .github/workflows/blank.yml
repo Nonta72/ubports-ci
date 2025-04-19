@@ -12,6 +12,7 @@ jobs:
       VENDOR: xiaomi
       DEVICE: cannon
       ANDROID_ROOT: /home/runner/work/halium/
+      WORK_ING: /home/runner/work/ubports-ci/ubports-ci
 
     steps:
     - uses: actions/checkout@v4
@@ -50,12 +51,11 @@ jobs:
     - name: Downloading source code
       run: |
         source halium.env
-        echo $PWD
         cd $ANDROID_ROOT
         repo init -u https://github.com/Halium/android -b halium-12.0 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
         echo $PWD
-        cp -a ../xiaomi_cannon.xml $ANDROID_ROOT/.repo/local_manifests/
+        cp -a $WORK_ING/xiaomi_cannon.xml $ANDROID_ROOT/.repo/local_manifests/
         repo sync -j8 -c --no-clone-bundle --no-tags
     
     - name: Build HAL
