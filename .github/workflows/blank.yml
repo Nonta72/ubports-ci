@@ -57,6 +57,7 @@ jobs:
         echo $PWD
         cp -a $WORK_ING/xiaomi_cannon.xml $ANDROID_ROOT/.repo/local_manifests/
         repo sync -j8 -c --no-clone-bundle --no-tags
+        df
     
     - name: Build HAL
       run: |
