@@ -37,7 +37,7 @@ jobs:
         mkdir -p ~/bin
         wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P ~/bin
         chmod +x ~/bin/repo
-        git config --global user.name "UBports Xiaomi Pad 4 CI"
+        git config --global user.name "UBports Xiaomi Cannon CI"
         git config --global user.email "thisemaildoesnotexist@exist.com"
         mkdir -p $ANDROID_ROOT
 
@@ -54,10 +54,12 @@ jobs:
         cd $ANDROID_ROOT
         echo $PWD
         repo init -u https://github.com/Halium/android -b halium-12.0 --depth=1
-        mkdir -p $ANDROID_ROOT/.repo/local_manifests
+        repo sync -c -j8
         echo $PWD
-        cp -a $WORK_ING/xiaomi_cannon.xml $ANDROID_ROOT/.repo/local_manifests/
-        repo sync -j8 -c --no-clone-bundle --no-tags
+        cp -a $WORK_ING/xiaomi_cannon.xml $ANDROID_ROOT/halium/devices/manifests/
+        ./halium/devices/setup cannon
+        
+        
         df
     
     - name: Build HAL
