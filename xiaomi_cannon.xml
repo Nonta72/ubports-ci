@@ -5,15 +5,23 @@
 <manifest>
     
     <!-- Remotes -->
-    <remote name="xiaomi-mt6853-devs" fetch="https://github.com/xiaomi-mt6853-devs" revision="lineage-19.1" />
+    <remote name="xiaomi-mt6853-devs" fetch="https://github.com/xiaomi-mt6853-devs" clone-depth="1" revision="lineage-19.1" />
+    <remote name="LineageOS" fetch="https://github.com/LineageOS" clone-depth="1" revision="lineage-19.1" />
 
     <!-- Device Tree -->
-    <project path="device/xiaomi/cannon" name="android_device_xiaomi_cannon" clone-depth="1" remote="xiaomi-mt6853-devs" />
+    <project path="device/xiaomi/cannon" name="android_device_xiaomi_cannon" remote="xiaomi-mt6853-devs" />
 
-    <!-- Kernel -->
-    <project path="kernel/xiaomi/cannon" name="android_kernel_xiaomi_cannon" clone-depth="1" remote="xiaomi-mt6853-devs" />
+    <!-- Kernel --> 
+    <project path="kernel/xiaomi/cannon" name="android_kernel_xiaomi_cannon" remote="xiaomi-mt6853-devs" />
 
     <!-- Proprietary/Vendor blobs -->
-    <project path="vendor/xiaomi/cannon" name="android_vendor_xiaomi_cannon" clone-depth="1" remote="xiaomi-mt6853-devs" />
+    <project path="vendor/xiaomi/cannon" name="android_vendor_xiaomi_cannon" remote="xiaomi-mt6853-devs" />
+
+    <!-- lineage.dependencies -->
+    <project path="device/mediatek/sepolicy_vndr" name="android_device_mediatek_sepolicy_vndr" remote="xiaomi-mt6853-devs" />
+    
+    <!-- lineage.dependencies -->
+    <project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="LineageOS" />
+
 </manifest>
 
