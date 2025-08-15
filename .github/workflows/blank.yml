@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-22.04
 
     env:
-      VENDOR: xiaomi
-      DEVICE: cannon
+      VENDOR: nothing
+      DEVICE: Spacewar
       ANDROID_ROOT: /home/runner/work/halium
       WORK_ING: /home/runner/work/ubports-ci/ubports-ci
 
@@ -37,7 +37,7 @@ jobs:
         mkdir -p ~/bin
         wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P ~/bin
         chmod +x ~/bin/repo
-        git config --global user.name "UBports Xiaomi Cannon CI"
+        git config --global user.name "UBports Nothing Spacewar CI"
         git config --global user.email "thisemaildoesnotexist@exist.com"
         mkdir -p $ANDROID_ROOT
 
@@ -58,11 +58,11 @@ jobs:
         source halium.env
         cd $ANDROID_ROOT
         echo $PWD
-        repo init -u https://github.com/Halium/android -b halium-12.0 --depth=1
+        repo init -u https://github.com/Halium/android -b halium-13.0 --depth=1
         repo sync -c -j8
         echo $PWD
-        cp -a $WORK_ING/xiaomi_cannon.xml $ANDROID_ROOT/halium/devices/manifests/
-        ./halium/devices/setup cannon
+        cp -a $WORK_ING/nothing_Spacewar.xml $ANDROID_ROOT/halium/devices/manifests/
+        ./halium/devices/setup Spacewar
         
         
         df
