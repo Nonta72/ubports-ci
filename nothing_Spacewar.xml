@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2021 HandsomeYingyan <handsomeyingyan@gmail.com>
+-->
+<manifest>
+    
+    <!-- Remotes -->
+    <remote name="Them" fetch="https://github.com/TheMuppets" clone-depth="1" revision="lineage-20" />
+    <remote name="LineageOS" fetch="https://github.com/LineageOS" clone-depth="1" revision="lineage-20" />
+    <remote name="Github" fetch="https://github.com/Nonta72" clone-depth="1" revision="lineage-20" />
+
+    <!-- Device Tree -->
+    <project path="device/nothing/Spacewar" name="android_device_nothing_Spacewar" remote="Github" />
+
+    <!-- Kernel --> 
+    <project path="kernel/nothing/sm7325" name="android_kernel_nothing_sm7325" remote="LineageOS" />
+
+    <!-- Proprietary/Vendor blobs -->
+    <project path="vendor/nothing/Spacewar" name="proprietary_vendor_nothing_Spacewar" remote="Them" />
+    
+    <!-- lineage.dependencies -->
+    <project path="hardware/nothing" name="android_hardware_nothing" remote="LineageOS" />
+
+</manifest>
+
